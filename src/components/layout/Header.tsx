@@ -55,20 +55,25 @@ export function Header() {
                                             <div key={section.title}>
                                                 <h4 className="font-bold text-white mb-4 border-b border-white/10 pb-2">{section.title}</h4>
                                                 <ul className="space-y-2">
-                                                    {section.links.map((link) => (
-                                                        <li key={link.title}>
-                                                            <Link
-                                                                href={link.href}
-                                                                className={`block text-sm transition-colors ${link.disabled
-                                                                    ? "text-gray-600 cursor-not-allowed"
-                                                                    : "text-gray-400 hover:text-brand-green"
-                                                                    }`}
-                                                                onClick={(e) => link.disabled && e.preventDefault()}
-                                                            >
-                                                                {link.title}
-                                                            </Link>
-                                                        </li>
-                                                    ))}
+                                                    {section.links.map((link) => {
+                                                        // Fix TS error: Property 'disabled' does not exist on type...
+                                                        const isDisabled = "disabled" in link ? link.disabled : false;
+                                                        
+                                                        return (
+                                                            <li key={link.title}>
+                                                                <Link
+                                                                    href={link.href}
+                                                                    className={`block text-sm transition-colors ${isDisabled
+                                                                        ? "text-gray-600 cursor-not-allowed"
+                                                                        : "text-gray-400 hover:text-brand-green"
+                                                                        }`}
+                                                                    onClick={(e) => isDisabled && e.preventDefault()}
+                                                                >
+                                                                    {link.title}
+                                                                </Link>
+                                                            </li>
+                                                        );
+                                                    })}
                                                 </ul>
                                             </div>
                                         ))}
