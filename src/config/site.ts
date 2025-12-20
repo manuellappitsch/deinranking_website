@@ -407,7 +407,7 @@ export const siteConfig = {
                     excerpt: "Wie du mit Make.com Prozesse automatisierst, Zeit sparst und dein Unternehmen skalierst – ganz ohne Code.",
                     date: "17. August 2025",
                     category: "Automatisierung",
-                    slug: "/seo-ratgeber/make-com",
+                    slug: "/ratgeber/make-com",
                     image: "/images/blog/make-com/hero.png",
                 },
                 {
@@ -415,7 +415,7 @@ export const siteConfig = {
                     excerpt: "Wie du auf Position 0 in den Google-Suchergebnissen landest und deine Sichtbarkeit maximierst.",
                     date: "15. Juli 2025",
                     category: "SEO",
-                    slug: "/seo-ratgeber/featured-snippets",
+                    slug: "/ratgeber/featured-snippets",
                     image: "https://dein-ranking.at/wp-content/uploads/2024/07/Featured-Snippets-Titelbild-Blog-1024x576.png",
                 },
                 {
@@ -423,7 +423,7 @@ export const siteConfig = {
                     excerpt: "Search Generative Experience: Wie KI die Google-Suche verändert und was das für dein SEO bedeutet.",
                     date: "7. Juli 2025",
                     category: "SEO",
-                    slug: "/seo-ratgeber/google-sge",
+                    slug: "/ratgeber/google-sge",
                     image: "https://dein-ranking.at/wp-content/uploads/2024/07/Google-SGE-Titelbild-Blog-1024x576.png",
                 },
                 {
@@ -431,7 +431,7 @@ export const siteConfig = {
                     excerpt: "Unternehmen, die jetzt nicht automatisieren, werden den Anschluss verlieren. Wir zeigen warum.",
                     date: "15. Dez 2024",
                     category: "KI-Automatisierung",
-                    slug: "/seo-ratgeber/ki-automatisierung-2025",
+                    slug: "/ratgeber/ki-automatisierung-2025",
                     image: "bg-blue-500/10",
                 },
                 {
@@ -439,7 +439,7 @@ export const siteConfig = {
                     excerpt: "Erfahrungsbericht: Wie ein Handwerksbetrieb 30% mehr Umsatz durch KI-Telefonie generierte.",
                     date: "05. Dez 2024",
                     category: "KI-Lösungen",
-                    slug: "/seo-ratgeber/voice-ai-kundenservice",
+                    slug: "/ratgeber/voice-ai-kundenservice",
                     image: "bg-purple-500/10",
                 },
                 {
@@ -447,7 +447,7 @@ export const siteConfig = {
                     excerpt: "Wie wir mit KI-gestütztem Coding interne Tools in Tagen statt Monaten bauen.",
                     date: "01. Dez 2024",
                     category: "Vibe-Coding",
-                    slug: "/seo-ratgeber/vibe-coding-intro",
+                    slug: "/ratgeber/vibe-coding-intro",
                     image: "bg-pink-500/10",
                 },
                 {
@@ -455,7 +455,7 @@ export const siteConfig = {
                     excerpt: "Warum On-Premise KI-Modelle für sensible Unternehmensdaten die beste Wahl sind.",
                     date: "25. Nov 2024",
                     category: "Lokale KI-Systeme",
-                    slug: "/seo-ratgeber/lokale-llms-sicherheit",
+                    slug: "/ratgeber/lokale-llms-sicherheit",
                     image: "bg-indigo-500/10",
                 },
             ],
@@ -511,7 +511,7 @@ export const siteConfig = {
                     links: [
                         { label: "Über uns", href: "/ueber-deinranking" },
                         { label: "Case Studies", href: "/casestudies" },
-                        { label: "Ratgeber", href: "/seo-ratgeber" },
+                        { label: "Ratgeber", href: "/ratgeber" },
                         { label: "Kontakt", href: "/kontakt" },
                     ],
                 },
