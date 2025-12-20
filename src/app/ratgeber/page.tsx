@@ -9,6 +9,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { useState, useMemo } from "react";
 import { cn } from "@/lib/utils";
+import { RatgeberHero } from "@/components/ratgeber/RatgeberHero";
 
 export default function RatgeberPage() {
     const { blog } = siteConfig.content;
@@ -28,65 +29,10 @@ export default function RatgeberPage() {
     return (
         <main className="min-h-screen bg-deep-navy selection:bg-brand-green selection:text-white">
             {/* Hero Section */}
-            <section className="relative pt-40 pb-12 overflow-hidden">
-                <div className="absolute inset-0 z-0">
-                    <NetworkBackground />
-                    {/* Gradients */}
-                    <div className="absolute top-[-10%] left-[-10%] w-[600px] h-[600px] bg-brand-green/10 rounded-full blur-[120px]" />
-                    <div className="absolute bottom-[-10%] right-[-10%] w-[500px] h-[500px] bg-blue-900/20 rounded-full blur-[100px]" />
-                </div>
-
-                <div className="container mx-auto px-4 relative z-10 text-center">
-                    <motion.h1
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        className="text-4xl md:text-6xl font-bold text-white mb-6"
-                    >
-                        {blog.title}
-                    </motion.h1>
-                    <motion.p
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.1 }}
-                        className="text-xl text-gray-400 max-w-2xl mx-auto mb-12"
-                    >
-                        {blog.subtitle}
-                    </motion.p>
-
-                    {/* Search Bar */}
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.2 }}
-                        className="max-w-2xl mx-auto relative"
-                    >
-                        <div className="relative group">
-                            <div className="absolute inset-0 bg-gradient-to-r from-brand-green/20 to-blue-500/20 rounded-full blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                            <div className="relative bg-white/5 border border-white/10 rounded-full flex items-center px-6 py-4 focus-within:border-brand-green/50 focus-within:bg-white/10 transition-all shadow-xl">
-                                <Search className="text-gray-400 mr-4" size={24} />
-                                <input
-                                    type="text"
-                                    placeholder="Suche nach Themen (z.B. 'OCR', 'Sales', 'SEO')..."
-                                    className="bg-transparent border-none outline-none text-white w-full placeholder:text-gray-500 text-lg"
-                                    value={searchQuery}
-                                    onChange={(e) => setSearchQuery(e.target.value)}
-                                />
-                                {searchQuery && (
-                                    <button
-                                        onClick={() => setSearchQuery("")}
-                                        className="text-gray-400 hover:text-white transition-colors"
-                                    >
-                                        <X size={20} />
-                                    </button>
-                                )}
-                            </div>
-                        </div>
-                    </motion.div>
-                </div>
-            </section>
+            <RatgeberHero searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
 
             {/* Category Filter */}
-            <section className="pb-12 relative z-10 border-b border-white/5">
+            <section className="pb-12 relative z-10">
                 <div className="container mx-auto px-4">
                     <div className="flex flex-wrap justify-center gap-3">
                         {blog.categories.map((category, index) => (
