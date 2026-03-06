@@ -4,7 +4,7 @@ import { siteConfig } from "@/config/site";
 import { Consultation } from "@/components/sections/Consultation";
 import { NetworkBackground } from "@/components/ui/network-background";
 import { motion } from "framer-motion";
-import { Mail, Phone, MapPin, ArrowRight } from "lucide-react";
+import { Mail, Phone, MapPin, ArrowRight, MessageSquare, Send, Zap, Bot } from "lucide-react";
 
 export default function ContactPage() {
     const { impressum } = siteConfig.content;
@@ -36,29 +36,116 @@ export default function ContactPage() {
     return (
         <main className="min-h-screen bg-deep-navy selection:bg-brand-green selection:text-white">
             {/* Hero Section */}
-            <section className="relative pt-40 pb-20 overflow-hidden">
-                <div className="absolute inset-0 z-0">
-                    <NetworkBackground />
-                    {/* Gradients */}
-                    <div className="absolute top-[-10%] left-[-10%] w-[600px] h-[600px] bg-brand-green/10 rounded-full blur-[120px]" />
-                    <div className="absolute bottom-[-10%] right-[-10%] w-[500px] h-[500px] bg-blue-900/20 rounded-full blur-[100px]" />
+            <section className="relative pt-32 pb-32 overflow-hidden min-h-[85vh] flex items-center justify-center perspective-[1000px]">
+                <div className="absolute inset-0 z-0 bg-deep-navy">
+                    {/* Gradients - Top Corners Only for Clean Bottom Transition */}
+                    <div className="absolute top-[-20%] left-[-10%] w-[800px] h-[800px] bg-brand-green/10 rounded-full blur-[120px] mix-blend-screen animate-pulse duration-[10000ms]" />
+                    <div className="absolute top-[-20%] right-[-10%] w-[700px] h-[700px] bg-blue-600/10 rounded-full blur-[100px] mix-blend-screen animate-pulse duration-[8000ms]" />
+
+                    {/* Retro/Coding Grid Animation */}
+                    <div className="absolute inset-0 overflow-hidden transform-gpu perspective-1000">
+                        <motion.div
+                            className="absolute inset-[-100%] w-[300%] h-[300%] origin-top bg-[linear-gradient(to_right,rgba(34,197,94,0.1)_1px,transparent_1px),linear-gradient(to_bottom,rgba(34,197,94,0.1)_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:linear-gradient(to_bottom,transparent_20%,black_60%,transparent_100%)]"
+                            initial={{ y: 0, rotateX: 60 }}
+                            animate={{ y: 64 }}
+                            transition={{
+                                repeat: Infinity,
+                                duration: 2,
+                                ease: "linear"
+                            }}
+                            style={{
+                                transformStyle: "preserve-3d",
+                            }}
+                        />
+                    </div>
+
+                    {/* Floating Contact Elements - Expanded & Brighter */}
+                    <div className="absolute inset-0 overflow-hidden pointer-events-none">
+                        {/* Mail Icon - Top Left - Brighter */}
+                        <motion.div
+                            className="absolute top-[15%] left-[5%] md:left-[10%] text-brand-green/40"
+                            animate={{ y: [0, -20, 0], rotate: [0, 5, 0] }}
+                            transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+                        >
+                            <Mail size={64} strokeWidth={1} />
+                        </motion.div>
+
+                        {/* Phone Icon - Bottom Right - Brighter */}
+                        <motion.div
+                            className="absolute bottom-[20%] right-[5%] md:right-[10%] text-blue-500/40"
+                            animate={{ y: [0, 20, 0], rotate: [0, -5, 0] }}
+                            transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+                        >
+                            <Phone size={80} strokeWidth={1} />
+                        </motion.div>
+
+                        {/* Chat Icon - Top Right - Medium Distance */}
+                        <motion.div
+                            className="absolute top-[20%] right-[15%] text-purple-500/30"
+                            animate={{ y: [0, -15, 0], scale: [1, 1.1, 1] }}
+                            transition={{ duration: 8, repeat: Infinity, ease: "easeInOut", delay: 2 }}
+                        >
+                            <MessageSquare size={48} strokeWidth={1} />
+                        </motion.div>
+
+                        {/* Send Icon - Bottom Left - Brighter */}
+                        <motion.div
+                            className="absolute bottom-[25%] left-[15%] text-brand-green/30"
+                            animate={{ y: [0, 15, 0], rotate: [0, 10, 0] }}
+                            transition={{ duration: 9, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
+                        >
+                            <Send size={40} strokeWidth={1} />
+                        </motion.div>
+
+                        {/* Bot Icon - Top Center Left - Subtle */}
+                        <motion.div
+                            className="absolute top-[10%] left-[25%] text-blue-400/20"
+                            animate={{ y: [0, -10, 0], scale: [1, 1.05, 1] }}
+                            transition={{ duration: 10, repeat: Infinity, ease: "easeInOut", delay: 1.5 }}
+                        >
+                            <Bot size={32} strokeWidth={1} />
+                        </motion.div>
+
+                        {/* Zap Icon - Top Center Right - Accent */}
+                        <motion.div
+                            className="absolute top-[30%] right-[25%] text-yellow-500/30"
+                            animate={{ y: [0, 25, 0], rotate: [0, -15, 0] }}
+                            transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 2.5 }}
+                        >
+                            <Zap size={36} strokeWidth={1} />
+                        </motion.div>
+                    </div>
                 </div>
 
                 <div className="container mx-auto px-4 relative z-10 text-center">
+                    <motion.div
+                        initial={{ opacity: 0, scale: 0.9 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        className="inline-block mb-4 px-4 py-1.5 rounded-full border border-brand-green/30 bg-brand-green/10 text-brand-green text-sm font-medium"
+                    >
+                        Zeit & Kosten sparen durch Automation
+                    </motion.div>
+
                     <motion.h1
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
-                        className="text-4xl md:text-6xl font-bold text-white mb-6"
+                        transition={{ delay: 0.1 }}
+                        className="text-4xl md:text-7xl font-bold text-white mb-6 leading-tight tracking-tight"
                     >
-                        Kontakt aufnehmen
+                        Lass uns deine Prozesse <br />
+                        <span className="text-brand-green">
+                            digitalisieren & skalieren.
+                        </span>
                     </motion.h1>
+
                     <motion.p
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.1 }}
-                        className="text-xl text-gray-400 max-w-2xl mx-auto"
+                        transition={{ delay: 0.2 }}
+                        className="text-xl text-gray-400 max-w-2xl mx-auto leading-relaxed"
                     >
-                        Wir freuen uns darauf, von dir zu hören.
+                        Verschwende keine Zeit mehr mit manuellen Aufgaben.
+                        Wir helfen dir, durch intelligente KI-Lösungen und smarte Automatisierung mehr Freiraum für dein Kerngeschäft zu schaffen.
                     </motion.p>
                 </div>
             </section>

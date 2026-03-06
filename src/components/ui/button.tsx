@@ -28,11 +28,15 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
 
         const Comp = (asChild ? Slot : motion.button) as any;
 
+        const motionProps = asChild ? {} : {
+            whileHover: { scale: 1.02 },
+            whileTap: { scale: 0.98 }
+        };
+
         return (
             <Comp
                 ref={ref}
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
+                {...motionProps}
                 className={cn(
                     "inline-flex items-center justify-center rounded-lg font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-green disabled:pointer-events-none disabled:opacity-50",
                     variants[variant],

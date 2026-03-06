@@ -7,7 +7,15 @@ export function MissionSection() {
     return (
         <section className="py-24 relative overflow-hidden">
             {/* Background Decorations */}
-            <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-brand-green/5 rounded-full blur-[120px]" />
+            <div
+                className="absolute inset-0 bg-[url('/grid-pattern.svg')] opacity-20 pointer-events-none"
+                style={{
+                    backgroundSize: '40px 40px',
+                    maskImage: 'linear-gradient(to bottom, transparent, black 25%, black 75%, transparent)',
+                    WebkitMaskImage: 'linear-gradient(to bottom, transparent, black 25%, black 75%, transparent)'
+                }}
+            />
+            <div className="absolute top-[15%] right-0 w-[500px] h-[500px] bg-brand-green/5 rounded-full blur-[120px]" />
 
             <div className="container mx-auto px-4 relative z-10">
                 <div className="max-w-4xl mx-auto text-center mb-16">

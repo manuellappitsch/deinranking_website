@@ -24,7 +24,7 @@ export default function AboutPage() {
         <div className="absolute inset-0 bg-gradient-to-b from-deep-navy via-transparent to-deep-navy opacity-80" />
       </div>
 
-      <div className="relative z-10 flex flex-col gap-[100px]">
+      <div className="relative z-10 flex flex-col">
         {/* High-Impact Hero Section */}
         <AboutHero />
 

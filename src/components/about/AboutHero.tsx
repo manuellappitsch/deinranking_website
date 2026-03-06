@@ -93,7 +93,7 @@ export function AboutHero() {
                 />
 
                 <div className="absolute top-[-20%] left-[-10%] w-[800px] h-[800px] bg-brand-green/10 rounded-full blur-[120px]" />
-                <div className="absolute bottom-[-10%] right-[-10%] w-[600px] h-[600px] bg-blue-900/20 rounded-full blur-[100px]" />
+                <div className="absolute top-[10%] right-[-10%] w-[600px] h-[600px] bg-blue-900/20 rounded-full blur-[100px]" />
             </div>
 
             {/* Layer 3: "Coding the Code" Animation */}
@@ -127,7 +127,7 @@ export function AboutHero() {
                     className="text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-8 tracking-tight leading-none"
                 >
                     Zeit gewinnen. Kosten senken. <br />
-                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-green to-emerald-400">
+                    <span className="text-brand-green">
                         Ergebnisse steigern.
                     </span>
                 </motion.h1>

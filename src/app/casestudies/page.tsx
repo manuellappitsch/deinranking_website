@@ -17,13 +17,23 @@ export default function CaseStudiesPage() {
   const [searchQuery, setSearchQuery] = useState("");
 
   // Filter items based on category and search query
+  // Filter and sort items based on search query and creation date (newest first)
   const filteredItems = useMemo(() => {
-    return caseStudies.items.filter(item => {
-      const matchesCategory = selectedCategory === "Alle" || item.category === selectedCategory;
-      const matchesSearch = item.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        item.excerpt.toLowerCase().includes(searchQuery.toLowerCase());
-      return matchesCategory && matchesSearch;
-    });
+    return caseStudies.items
+      .filter(item => {
+        const matchesCategory = selectedCategory === "Alle" || item.category === selectedCategory;
+        const matchesSearch = item.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+          item.excerpt.toLowerCase().includes(searchQuery.toLowerCase());
+        return matchesCategory && matchesSearch;
+      })
+      // Sort by createdAt descending (newest first)
+      .sort((a, b) => {
+        // @ts-ignore
+        const dateA = new Date(a.createdAt || a.date).getTime();
+        // @ts-ignore
+        const dateB = new Date(b.createdAt || b.date).getTime();
+        return dateB - dateA;
+      });
   }, [selectedCategory, searchQuery, caseStudies.items]);
 
   return (
@@ -32,7 +42,7 @@ export default function CaseStudiesPage() {
       <CaseStudiesHero searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
 
       {/* Search Bar Section */}
-      <section className="relative -mt-8 z-20 px-4">
+      <section className="relative mt-12 md:-mt-8 z-20 px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}

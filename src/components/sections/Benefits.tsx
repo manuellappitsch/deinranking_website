@@ -41,17 +41,17 @@ export function Benefits() {
     }, []);
 
     return (
-        <section className="py-32 relative">
+        <section className="py-16 md:py-32 relative">
             {/* Background Elements */}
             <div className="absolute inset-0 z-0">
-                <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-brand-green/10 rounded-full blur-[120px] pointer-events-none translate-x-1/3 -translate-y-1/3" />
-                <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-blue-900/15 rounded-full blur-[100px] pointer-events-none -translate-x-1/3 translate-y-1/3" />
+                <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-brand-green/10 rounded-full blur-[120px] pointer-events-none translate-x-1/3 -translate-y-1/3 hidden md:block" />
+                <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-blue-900/15 rounded-full blur-[100px] pointer-events-none -translate-x-1/3 translate-y-1/3 hidden md:block" />
             </div>
 
             <div className="container mx-auto px-4 relative z-10">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
                     {/* Left Column: Sticky Header & Navigation */}
-                    <div className="lg:sticky lg:top-32 h-fit">
+                    <div className="lg:sticky lg:top-32 h-fit self-start">
                         <h2 className="text-3xl md:text-5xl font-bold text-white mb-6 leading-tight">
                             {benefits.title}
                         </h2>

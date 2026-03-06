@@ -101,7 +101,7 @@ export function RatgeberHero({ searchQuery, setSearchQuery }: RatgeberHeroProps)
 
                 {/* 4. Glow Orbs */}
                 <div className="absolute top-[-20%] left-[-10%] w-[600px] h-[600px] bg-brand-green/10 rounded-full blur-[100px]" />
-                <div className="absolute bottom-[-20%] right-[-10%] w-[500px] h-[500px] bg-blue-900/10 rounded-full blur-[100px]" />
+                <div className="absolute top-[-15%] right-[-10%] w-[500px] h-[500px] bg-blue-900/10 rounded-full blur-[100px]" />
             </div>
 
             {/* Foreground Content */}
@@ -169,6 +169,9 @@ export function RatgeberHero({ searchQuery, setSearchQuery }: RatgeberHeroProps)
 
                 </div>
             </div>
+
+            {/* Bottom Gradient Fade for smooth transition */}
+            <div className="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-t from-deep-navy via-deep-navy/80 to-transparent pointer-events-none z-0" />
         </section>
     );
 }

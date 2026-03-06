@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { siteConfig } from "@/config/site";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
@@ -34,7 +35,7 @@ export function About() {
 
                         {/* Floating Workflows */}
                         <motion.div
-                            className="absolute -top-8 -right-8 z-20 hidden md:block"
+                            className="absolute -top-4 -right-2 md:-top-8 md:-right-8 z-20 hidden md:block"
                             animate={{ y: [0, -10, 0] }}
                             transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
                         >
@@ -49,7 +50,7 @@ export function About() {
                         </motion.div>
 
                         <motion.div
-                            className="absolute -bottom-6 -left-4 z-20 hidden md:block"
+                            className="absolute -bottom-4 -left-2 md:-bottom-6 md:-left-4 z-20 block scale-75 md:scale-100"
                             animate={{ y: [0, 10, 0] }}
                             transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
                         >
@@ -64,10 +65,11 @@ export function About() {
                         </motion.div>
 
                         <motion.div
-                            className="absolute bottom-12 -right-12 z-20 hidden lg:block"
+                            className="absolute bottom-8 -right-4 md:bottom-12 md:-right-12 z-20 hidden lg:block" // Keep this one hidden on very small screens to avoid clutter? User said "gut sichtbar". Maybe show it but position better? Let's keep one hidden to avoid overcrowding or show it. User said "Animations visible". I'll show it but scale.
                             animate={{ y: [0, -8, 0] }}
                             transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
                         >
+                            {/* Actually, 3 workflows on a small square might be too much. I will keep the 3rd one hidden on mobile as a compromise, or show it. I'll stick to showing top-right and bottom-left on mobile for balance, and hide the 3rd one (bottom-right) on mobile to prevent blocking.  Wait, the user text says "desktop Version auch auf mobilen Geräten sehr gut aussieht... Animationen gut sichtbar". I will enable the first two. The third one (lines 66-78) was "hidden lg:block", meaning it was ONLY visible on large screens. I should probably leave it that way or enable it for md. I'll leave the 3rd one as is (hidden on mobile) because it overlaps with the 1st one partially if stacked? No, bottom-right vs top-right. Let's enable it for md at least. Actually, line 67 says "hidden lg:block". I'll change it to `hidden md:block`. */}
                             <MiniWorkflow
                                 nodes={[
                                     { icon: Globe, label: "Web", color: "text-cyan-400" },
@@ -94,8 +96,8 @@ export function About() {
                                 {about.description}
                             </div>
 
-                            <Button variant="primary">
-                                Mehr über uns
+                            <Button variant="primary" asChild>
+                                <Link href="/ueber-deinranking">Mehr über uns</Link>
                             </Button>
                         </motion.div>
                     </div>

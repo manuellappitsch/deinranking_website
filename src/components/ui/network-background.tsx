@@ -9,6 +9,9 @@ export function NetworkBackground() {
         const canvas = canvasRef.current;
         if (!canvas) return;
 
+        // Optimization: Disable on mobile to prevent stuttering
+        if (window.innerWidth < 768) return;
+
         const ctx = canvas.getContext("2d");
         if (!ctx) return;
 

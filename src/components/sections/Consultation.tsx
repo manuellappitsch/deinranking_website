@@ -21,7 +21,7 @@ export function Consultation() {
     }, []);
 
     return (
-        <section className="py-32 relative">
+        <section className="py-16 md:py-32 relative">
             {/* Background Elements */}
             <div className="absolute inset-0 z-0">
                 <div className="absolute inset-0 bg-[url('/grid-pattern.svg')] opacity-30" style={{ backgroundSize: '40px 40px' }} />
@@ -44,7 +44,7 @@ export function Consultation() {
                     {/* Glow behind the calendar */}
                     <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[110%] h-[110%] bg-brand-green/20 rounded-full blur-[100px] -z-10" />
 
-                    <Card className="bg-white/5 border-white/10 p-0 min-h-[600px] flex items-center justify-center relative overflow-hidden backdrop-blur-sm w-full">
+                    <Card className="bg-transparent border-none p-0 min-h-[600px] flex items-center justify-center relative overflow-hidden w-full shadow-none">
                         <div className="w-full h-full min-h-[700px] meetings-iframe-container" data-src="https://meetings.hubspot.com/manuel-lappitsch/ki-strategiegesprach?embed=true"></div>
                     </Card>
                 </div>

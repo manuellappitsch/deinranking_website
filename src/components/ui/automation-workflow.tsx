@@ -21,6 +21,14 @@ const connections = [
 
 export function AutomationWorkflow() {
     const [activeStep, setActiveStep] = useState(0);
+    const [isMobile, setIsMobile] = useState(false);
+
+    useEffect(() => {
+        const checkMobile = () => setIsMobile(window.innerWidth < 768);
+        checkMobile();
+        window.addEventListener('resize', checkMobile);
+        return () => window.removeEventListener('resize', checkMobile);
+    }, []);
 
     useEffect(() => {
         const interval = setInterval(() => {
@@ -29,22 +37,52 @@ export function AutomationWorkflow() {
         return () => clearInterval(interval);
     }, []);
 
+    // Mobile-specific layout configuration
+    const getCoordinates = (node: any) => {
+        if (!isMobile) return { x: node.x, y: node.y };
+
+        // Compact scattered layout for mobile
+        const positions = {
+            1: { x: 25, y: 15 }, // Webhook (Top Left - Moved down/left to prevent clipping)
+            2: { x: 70, y: 25 }, // OpenAI (Right)
+            3: { x: 30, y: 45 }, // Pipedrive (Left)
+            4: { x: 70, y: 60 }, // Google Docs (Right)
+            5: { x: 50, y: 80 }  // Gmail (Bottom Center)
+        };
+        // @ts-ignore
+        return positions[node.id] || { x: node.x, y: node.y };
+    };
+
     return (
         <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
             <svg className="absolute inset-0 w-full h-full">
                 {connections.map((conn, i) => {
-                    const start = nodes.find(n => n.id === conn.from);
-                    const end = nodes.find(n => n.id === conn.to);
-                    if (!start || !end) return null;
+                    const startNode = nodes.find(n => n.id === conn.from);
+                    const endNode = nodes.find(n => n.id === conn.to);
+                    if (!startNode || !endNode) return null;
+
+                    const start = getCoordinates(startNode);
+                    const end = getCoordinates(endNode);
 
                     const isActive = activeStep > i;
                     const isNext = activeStep === i + 1;
+
+                    // Adjust control points based on orientation
+                    const isVertical = isMobile;
+                    const controlPoint1 = isVertical
+                        ? `${start.x}% ${start.y + 10}%`
+                        : `${start.x + 10}% ${start.y}%`;
+                    const controlPoint2 = isVertical
+                        ? `${end.x}% ${end.y - 10}%`
+                        : `${end.x - 10}% ${end.y}%`;
+
+                    const pathd = `M ${start.x}% ${start.y}% C ${controlPoint1}, ${controlPoint2}, ${end.x}% ${end.y}%`;
 
                     return (
                         <g key={i}>
                             {/* Base Line */}
                             <path
-                                d={`M ${start.x}% ${start.y}% C ${start.x + 10}% ${start.y}%, ${end.x - 10}% ${end.y}%, ${end.x}% ${end.y}%`}
+                                d={pathd}
                                 fill="none"
                                 stroke="rgba(255, 255, 255, 0.05)"
                                 strokeWidth="2"
@@ -52,7 +90,7 @@ export function AutomationWorkflow() {
 
                             {/* Active Line Animation */}
                             <motion.path
-                                d={`M ${start.x}% ${start.y}% C ${start.x + 10}% ${start.y}%, ${end.x - 10}% ${end.y}%, ${end.x}% ${end.y}%`}
+                                d={pathd}
                                 fill="none"
                                 stroke={isActive ? "#76B041" : "rgba(255, 255, 255, 0.1)"}
                                 strokeWidth="2"
@@ -70,7 +108,7 @@ export function AutomationWorkflow() {
                                     <animateMotion
                                         dur="1s"
                                         repeatCount="1"
-                                        path={`M ${start.x}% ${start.y}% C ${start.x + 10}% ${start.y}%, ${end.x - 10}% ${end.y}%, ${end.x}% ${end.y}%`}
+                                        path={pathd}
                                         fill="freeze"
                                     />
                                 </motion.circle>
@@ -92,6 +130,7 @@ export function AutomationWorkflow() {
             {nodes.map((node, i) => {
                 const isActive = activeStep === i;
                 const isCompleted = activeStep > i;
+                const pos = getCoordinates(node);
 
                 return (
                     <motion.div
@@ -100,7 +139,7 @@ export function AutomationWorkflow() {
                             ${isActive ? 'bg-white/10 border-brand-green shadow-[0_0_20px_rgba(118,176,65,0.3)] scale-110 z-10' : 'bg-deep-navy/40 border-white/10 scale-100 z-0'}
                             ${isCompleted ? 'border-brand-green/50' : ''}
                         `}
-                        style={{ left: `${node.x}%`, top: `${node.y}%`, transform: 'translate(-50%, -50%)' }}
+                        style={{ left: `${pos.x}%`, top: `${pos.y}%`, transform: 'translate(-50%, -50%)', width: isMobile ? '140px' : 'auto' }}
                     >
                         {/* Header Line */}
                         <div className="flex items-center gap-3">

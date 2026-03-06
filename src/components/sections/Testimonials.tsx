@@ -8,7 +8,7 @@ export function Testimonials() {
     const testimonials = (siteConfig.content as any).testimonials || { title: "", items: [] };
 
     return (
-        <section className="py-32 relative">
+        <section className="py-16 md:py-32 relative">
             <div className="container mx-auto px-4 mb-16">
                 <div className="text-center max-w-3xl mx-auto">
                     <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">

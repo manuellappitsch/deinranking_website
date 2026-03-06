@@ -17,13 +17,23 @@ export default function RatgeberPage() {
     const [searchQuery, setSearchQuery] = useState("");
 
     // Filter posts based on category and search query
+    // Filter and sort posts based on search query and creation date (newest first)
     const filteredPosts = useMemo(() => {
-        return blog.posts.filter(post => {
-            const matchesCategory = selectedCategory === "Alle" || post.category === selectedCategory;
-            const matchesSearch = post.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-                post.excerpt.toLowerCase().includes(searchQuery.toLowerCase());
-            return matchesCategory && matchesSearch;
-        });
+        return blog.posts
+            .filter(post => {
+                const matchesCategory = selectedCategory === "Alle" || post.category === selectedCategory;
+                const matchesSearch = post.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+                    post.excerpt.toLowerCase().includes(searchQuery.toLowerCase());
+                return matchesCategory && matchesSearch;
+            })
+            // Sort by createdAt descending (newest first)
+            .sort((a, b) => {
+                // @ts-ignore - createdAt is newly added and might not be in the type definition yet if not updated elsewhere, but it is in the object
+                const dateA = new Date(a.createdAt || a.date).getTime();
+                // @ts-ignore
+                const dateB = new Date(b.createdAt || b.date).getTime();
+                return dateB - dateA;
+            });
     }, [selectedCategory, searchQuery, blog.posts]);
 
     return (

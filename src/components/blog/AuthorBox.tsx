@@ -10,7 +10,7 @@ interface AuthorBoxProps {
 
 export function AuthorBox({ author, role = "SEO & Automation Expert", image }: AuthorBoxProps) {
     // Fallback to site config image if none provided, or a placeholder
-    const authorImage = image || siteConfig.content.about.image || "/images/placeholder-author.jpg";
+    const authorImage = image || "/images/manuel-lappitsch-author.png";
 
     return (
         <div className="space-y-4">
@@ -18,18 +18,12 @@ export function AuthorBox({ author, role = "SEO & Automation Expert", image }: A
             <Card className="p-6 bg-white/5 border-white/10">
                 <div className="flex items-center gap-4 mb-4">
                     <div className="relative h-12 w-12 rounded-full overflow-hidden border border-white/10">
-                        {/* Using a generic placeholder if the specific image is missing to avoid broken images */}
-                        <div className="absolute inset-0 bg-gray-700 flex items-center justify-center text-xs text-gray-400">
-                            {author.charAt(0)}
-                        </div>
-                        {/* Uncomment when real images are available
                         <Image
                             src={authorImage}
                             alt={author}
                             fill
                             className="object-cover"
                         />
-                        */}
                     </div>
                     <div>
                         <div className="font-bold text-white">{author}</div>

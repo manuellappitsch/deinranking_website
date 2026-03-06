@@ -20,16 +20,24 @@ export function Services() {
     const { services } = siteConfig.content;
 
     return (
-        <section className="py-32 relative">
+        <section id="services" className="py-16 md:py-32 relative">
             {/* Background Elements */}
             <div className="absolute inset-0 z-0">
 
                 {/* Grid Pattern */}
-                <div className="absolute inset-0 bg-[url('/grid-pattern.svg')] opacity-30" style={{ backgroundSize: '40px 40px' }} />
+                {/* Grid Pattern */}
+                <div
+                    className="absolute inset-0 bg-[url('/grid-pattern.svg')] opacity-30"
+                    style={{
+                        backgroundSize: '40px 40px',
+                        maskImage: 'linear-gradient(to bottom, transparent, black 20%, black 80%, transparent)',
+                        WebkitMaskImage: 'linear-gradient(to bottom, transparent, black 20%, black 80%, transparent)'
+                    }}
+                />
 
-                {/* Gradient Blobs */}
-                <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-brand-green/15 rounded-full blur-[120px] pointer-events-none translate-x-1/3 -translate-y-1/3" />
-                <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-blue-900/20 rounded-full blur-[100px] pointer-events-none -translate-x-1/3 translate-y-1/3" />
+                {/* Gradient Blobs - Hidden on Mobile */}
+                <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-brand-green/15 rounded-full blur-[120px] pointer-events-none translate-x-1/3 -translate-y-1/3 hidden md:block" />
+                <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-blue-900/20 rounded-full blur-[100px] pointer-events-none -translate-x-1/3 translate-y-1/3 hidden md:block" />
 
                 {/* Network Animation */}
                 <NetworkBackground />

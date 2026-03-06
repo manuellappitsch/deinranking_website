@@ -2,6 +2,7 @@
 
 import { siteConfig } from "@/config/site";
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 import { motion } from "framer-motion";
 import { AutomationWorkflow } from "@/components/ui/automation-workflow";
 
@@ -9,13 +10,13 @@ export function Hero() {
     const { hero } = siteConfig.content;
 
     return (
-        <section className="relative min-h-screen flex items-center justify-center pt-20">
+        <section className="relative min-h-screen flex items-center justify-center pt-32 md:pt-20 overflow-hidden">
             {/* Animated Background Elements */}
             <div className="absolute inset-0 z-0">
 
-                {/* Green Blob - Darker & Subtler */}
+                {/* Green Blob - Darker & Subtler - Hidden on Mobile for Performance */}
                 <motion.div
-                    className="absolute top-[-10%] left-[-10%] w-[700px] h-[700px] bg-brand-green/20 rounded-full blur-[100px]"
+                    className="absolute top-[-10%] left-[-10%] w-[700px] h-[700px] bg-brand-green/20 rounded-full blur-[100px] hidden md:block"
                     animate={{
                         x: [0, 100, 0],
                         y: [0, 50, 0],
@@ -24,9 +25,9 @@ export function Hero() {
                     transition={{ duration: 20, repeat: Infinity, ease: "easeInOut" }}
                 />
 
-                {/* Blue Blob - Darker & Subtler */}
+                {/* Blue Blob - Darker & Subtler - Relocated to Top Right - Hidden on Mobile for Performance */}
                 <motion.div
-                    className="absolute bottom-[-10%] right-[-10%] w-[600px] h-[600px] bg-blue-900/40 rounded-full blur-[100px]"
+                    className="absolute top-[10%] right-[-10%] w-[600px] h-[600px] bg-blue-900/40 rounded-full blur-[100px] hidden md:block"
                     animate={{
                         x: [0, -50, 0],
                         y: [0, -100, 0],
@@ -83,17 +84,17 @@ export function Hero() {
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.5, delay: 0.3 }}
                         >
-                            <Button size="lg" variant="primary" className="shadow-[0_0_20px_rgba(118,176,65,0.3)] hover:shadow-[0_0_30px_rgba(118,176,65,0.5)] transition-shadow duration-300">
-                                {hero.ctaPrimary}
+                            <Button size="lg" variant="primary" className="shadow-[0_0_20px_rgba(118,176,65,0.3)] hover:shadow-[0_0_30px_rgba(118,176,65,0.5)] transition-shadow duration-300" asChild>
+                                <Link href={hero.ctaPrimaryHref || "/kontakt"}>{hero.ctaPrimary}</Link>
                             </Button>
-                            <Button size="lg" variant="outline" className="backdrop-blur-sm bg-white/5 border-white/10 hover:bg-white/10">
-                                {hero.ctaSecondary}
+                            <Button size="lg" variant="outline" className="backdrop-blur-sm bg-white/5 border-white/10 hover:bg-white/10" asChild>
+                                <Link href={hero.ctaSecondaryHref || "#services"}>{hero.ctaSecondary}</Link>
                             </Button>
                         </motion.div>
                     </div>
 
                     {/* Right Column: Animation */}
-                    <div className="relative h-[400px] md:h-[500px] w-full hidden lg:block">
+                    <div className="relative h-[300px] md:h-[500px] w-full mt-4 lg:mt-0 lg:block">
                         <AutomationWorkflow />
                     </div>
                 </div>

@@ -9,8 +9,17 @@
   /* Fallback */
 }
 
+html,
 body {
   color: var(--foreground);
   background: var(--background);
   font-family: var(--font-liebling), sans-serif;
+  overflow-x: hidden;
+  width: 100%;
+  position: relative;
+}
+
+/* Hide Cookiebot Floating Widget (we use footer link instead) */
+#CookiebotWidget {
+  display: none !important;
 }
