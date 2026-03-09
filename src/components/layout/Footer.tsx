@@ -28,7 +28,7 @@ export function Footer() {
     return (
         <footer className="bg-deep-navy border-t border-white/10 py-16 mt-20 relative z-20">
             <div className="container mx-auto px-4">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 mb-12">
                     {/* Brand Column */}
                     <div className="flex flex-col gap-6">
                         <div>
@@ -100,6 +100,19 @@ export function Footer() {
                         <h4 className="text-white font-bold mb-6">{footer.columns.legal.title}</h4>
                         <ul className="flex flex-col gap-3">
                             {footer.columns.legal.links.map((link) => (
+                                <li key={link.label}>
+                                    <Link href={link.href} className="text-gray-400 hover:text-brand-green text-sm transition-colors">
+                                        {link.label}
+                                    </Link>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h4 className="text-white font-bold mb-6">{footer.columns.ressourcen.title}</h4>
+                        <ul className="flex flex-col gap-3">
+                            {footer.columns.ressourcen.links.map((link) => (
                                 <li key={link.label}>
                                     <Link href={link.href} className="text-gray-400 hover:text-brand-green text-sm transition-colors">
                                         {link.label}

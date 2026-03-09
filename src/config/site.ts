@@ -470,6 +470,303 @@ export const siteConfig = {
                 },
             ],
         },
+        kiFoerderung: {
+            meta: {
+                title: "KI Förderung Österreich 2026: Alle Programme für KMU im Überblick",
+                description: "Welche KI-Förderungen gibt es 2026 in Österreich? KMU.DIGITAL, FFG, AWS AI Mission Austria & mehr — mit konkreten Beträgen, Voraussetzungen und Tipps zur Antragstellung.",
+            },
+            hero: {
+                badge: "Über 55 Mio. € verfügbar",
+                title: "KI Förderung Österreich 2026",
+                subtitle: "Alle Programme für KMU auf einen Blick",
+                description: "Österreichische Unternehmen können 2026 über 55 Millionen Euro an Fördermitteln für KI-Projekte abrufen. Wir helfen dir, das richtige Programm zu finden und dein Projekt gefördert umzusetzen.",
+                ctaPrimary: "Förderung prüfen lassen",
+                ctaPrimaryHref: "/kontakt",
+                ctaSecondary: "Programme ansehen",
+                ctaSecondaryHref: "#programme",
+            },
+            stats: [
+                { value: "55 Mio. €", label: "Fördermittel verfügbar" },
+                { value: "8", label: "aktive Programme" },
+                { value: "bis 150k€", label: "pro Projekt möglich" },
+                { value: "50%", label: "Ø Förderquote" },
+            ],
+            programme: [
+                {
+                    name: "KMU.DIGITAL",
+                    foerderung: "bis €8.000",
+                    quote: "30–80%",
+                    fuerWen: "KMU, alle Branchen",
+                    highlight: false,
+                },
+                {
+                    name: "AI-Start",
+                    foerderung: "bis €15.000",
+                    quote: "50%",
+                    fuerWen: "KI-Erstanwender",
+                    highlight: true,
+                },
+                {
+                    name: "AI-Adoption",
+                    foerderung: "bis €150.000",
+                    quote: "50%",
+                    fuerWen: "Innovative KI-Projekte",
+                    highlight: true,
+                },
+                {
+                    name: "AI-Wissen",
+                    foerderung: "bis €20.000",
+                    quote: "50%",
+                    fuerWen: "Wissensaufbau intern",
+                    highlight: false,
+                },
+                {
+                    name: "FFG Kleinprojekt",
+                    foerderung: "bis €90.000",
+                    quote: "45–60%",
+                    fuerWen: "KMU mit F&E-Anteil",
+                    highlight: false,
+                },
+                {
+                    name: "FFG Basisprogramm",
+                    foerderung: "bis €5 Mio.",
+                    quote: "bis 50%",
+                    fuerWen: "F&E-Projekte",
+                    highlight: false,
+                },
+                {
+                    name: "Skills Schecks 2026",
+                    foerderung: "bis €5.000 / MA",
+                    quote: "variabel",
+                    fuerWen: "KI-Weiterbildung",
+                    highlight: false,
+                },
+                {
+                    name: "Länderprogramme",
+                    foerderung: "bis €75.000",
+                    quote: "variabel",
+                    fuerWen: "Regionaler Fokus",
+                    highlight: false,
+                },
+            ],
+            details: [
+                {
+                    name: "KMU.DIGITAL",
+                    icon: "Building2",
+                    badge: "Beliebtestes Programm",
+                    beschreibung: "Das bekannteste und zugänglichste Förderprogramm für österreichische Klein- und Mittelbetriebe. Abgewickelt vom Austria Wirtschaftsservice (aws) im Auftrag des Wirtschaftsministeriums.",
+                    punkte: [
+                        "Statusanalyse: 80% Förderquote (max. €400/Thema)",
+                        "Strategieberatung: 50% Förderquote (max. €1.000/Thema)",
+                        "Umsetzung inkl. KI: 30% Förderquote (max. €6.000)",
+                        "Antrag über aws Fördermanager",
+                    ],
+                    hinweis: "Budget ist begrenzt — Einreichungen im Q1 haben deutlich höhere Bewilligungsquoten.",
+                },
+                {
+                    name: "AI Mission Austria",
+                    icon: "Rocket",
+                    badge: "Neu 2025/2026",
+                    beschreibung: "Nationales KI-Förderdach mit 20 Mio. € aus dem Fonds Zukunft Österreich. Drei Teilprogramme je nach Projektgröße und -reife.",
+                    punkte: [
+                        "AI-Start: bis €15.000 — für den ersten KI-Einsatz",
+                        "AI-Adoption: bis €150.000 — für ambitionierte KI-Projekte",
+                        "AI-Wissen: bis €20.000 + 20 Beratungsstunden",
+                        "Alle Programme fördern DSGVO- und EU AI Act-konforme Lösungen",
+                    ],
+                    hinweis: "Besonders geeignet für KI-Telefonassistenten, Automatisierungsprojekte und On-Premise KI-Systeme.",
+                },
+                {
+                    name: "FFG Programme",
+                    icon: "FlaskConical",
+                    badge: "Höchste Beträge",
+                    beschreibung: "Die Österreichische Forschungsförderungsgesellschaft fördert KI-Projekte mit Forschungs- und Entwicklungsanteil. Anspruchsvoller, aber deutlich höhere Beträge.",
+                    punkte: [
+                        "Kleinprojekt: bis €90.000 (45–60% Förderquote)",
+                        "Basisprogramm: bis €5 Mio. (bis 50%, Startups bis 70%)",
+                        "Mix aus Zuschuss + zinsgünstigem Darlehen (1,75% p.a.)",
+                        "AI Ökosysteme: AI for Tech, AI for Green, AIM AT",
+                    ],
+                    hinweis: "Geeignet wenn dein KI-Projekt einen klaren Innovationsgehalt oder F&E-Anteil hat.",
+                },
+                {
+                    name: "Skills Schecks 2026",
+                    icon: "GraduationCap",
+                    badge: "Für Weiterbildung",
+                    beschreibung: "Fördert die KI-Qualifizierung deiner Mitarbeiter. Perfekte Ergänzung zur technischen Implementierung.",
+                    punkte: [
+                        "bis €5.000 pro Mitarbeiter, max. 5 Schecks pro Unternehmen",
+                        "Gültig für KI-, Daten- und Digitalisierungsweiterbildungen",
+                        "Einreichung: 2. März bis 15. Dezember 2026",
+                        "Kombinierbar mit KMU.DIGITAL und AI Mission Austria",
+                    ],
+                    hinweis: "Technik über KMU.DIGITAL fördern lassen + Schulung über Skills Schecks = maximale Förderung.",
+                },
+            ],
+            schritte: [
+                {
+                    nummer: "01",
+                    titel: "Vorhaben definieren",
+                    beschreibung: "Was genau soll umgesetzt werden? KI-Telefonassistent, Automatisierung, lokales KI-System? Je konkreter, desto besser die Förderchancen.",
+                },
+                {
+                    nummer: "02",
+                    titel: "Programm wählen",
+                    beschreibung: "Kleines erstes Projekt → KMU.DIGITAL oder AI-Start. Größeres Vorhaben → AI-Adoption. F&E-Anteil vorhanden → FFG Kleinprojekt.",
+                },
+                {
+                    nummer: "03",
+                    titel: "Unterlagen vorbereiten",
+                    beschreibung: "Projektbeschreibung, Kostenaufstellung, Unternehmensdarstellung. Wir unterstützen dich dabei, alles förderreif aufzubereiten.",
+                },
+                {
+                    nummer: "04",
+                    titel: "Antrag einreichen",
+                    beschreibung: "KMU.DIGITAL & AWS: über den aws Fördermanager. FFG: über das FFG-Einreichportal. Wichtig: vor Projektbeginn einreichen.",
+                },
+                {
+                    nummer: "05",
+                    titel: "Genehmigung & Umsetzung",
+                    beschreibung: "Nach Genehmigung (4–10 Wochen) startet die Umsetzung. Alle Kosten sauber dokumentieren — der Abschlussbericht ist Teil der Abrechnung.",
+                },
+            ],
+            faq: [
+                {
+                    question: "Kann ich mehrere Förderungen gleichzeitig beantragen?",
+                    answer: "Ja — solange keine Doppelförderung desselben Kostenpunktes entsteht. KMU.DIGITAL, AI-Wissen und eine Landesförderung lassen sich in vielen Fällen kombinieren und können die Gesamtförderung deutlich erhöhen.",
+                },
+                {
+                    question: "Wie hoch ist die Förderung für ein KI-Projekt?",
+                    answer: "Je nach Programm zwischen €8.000 (KMU.DIGITAL) und €150.000 (AI-Adoption). Bei geschickter Kombination mehrerer Programme sind auch höhere Gesamtbeträge möglich.",
+                },
+                {
+                    question: "Muss ich vor dem Projektstart einreichen?",
+                    answer: "Ja. Förderungen müssen in der Regel vor Projektbeginn beantragt werden. Rückwirkende Förderung ist die Ausnahme. Deshalb: erst planen und einreichen, dann umsetzen.",
+                },
+                {
+                    question: "Gilt das auch für Einzelunternehmer?",
+                    answer: "KMU.DIGITAL und AI Mission Austria sind grundsätzlich für alle Unternehmensformen zugänglich — auch für Einzelunternehmer, sofern sie gewerblich tätig sind.",
+                },
+                {
+                    question: "Was ist mit dem CDC-Berater bei KMU.DIGITAL?",
+                    answer: "Für KMU.DIGITAL ist ein zertifizierter Certified Digital Consultant (CDC) verpflichtend. DeinRanking übernimmt die technische Umsetzung und vermittelt auf Wunsch den Kontakt zu einem CDC-Partner für die Antragstellung.",
+                },
+            ],
+        },
+        kiAgenturGraz: {
+            meta: {
+                title: "KI Agentur Graz | DeinRanking – Voice AI & Automatisierung",
+                description: "KI Agentur aus Graz mit echten Referenzen. Voice AI, KI-Telefonassistenten & Automatisierung für Grazer Unternehmen. Jetzt kostenloses Erstgespräch buchen.",
+            },
+            hero: {
+                badge: "Lokale KI Agentur aus Graz",
+                title: "KI & Automatisierung für Grazer Unternehmen",
+                subtitle: "Persönlich. Regional. Messbar.",
+                description: "Als KI Agentur aus Graz entwickeln wir Voice AI Systeme, KI-Telefonassistenten und Automatisierungslösungen für Unternehmen in Graz und der Steiermark — mit echten Projektreferenzen und persönlicher Betreuung vor Ort.",
+                ctaPrimary: "Kostenloses Erstgespräch",
+                ctaPrimaryHref: "/kontakt",
+                ctaSecondary: "Referenzen ansehen",
+                ctaSecondaryHref: "#referenzen",
+            },
+            stats: [
+                { value: "50+", label: "Projekte in Graz & Steiermark" },
+                { value: "seit 2022", label: "in Graz aktiv" },
+                { value: "3 Wochen", label: "bis zum ersten Live-System" },
+                { value: "100%", label: "Persönliche Betreuung" },
+            ],
+            leistungen: [
+                {
+                    title: "KI-Telefonassistent",
+                    description: "Verpasse keine Anfrage mehr — auch außerhalb der Bürozeiten. Unser Voice AI System nimmt Anrufe entgegen, qualifiziert Leads und bucht Termine direkt in deinen Kalender.",
+                    icon: "Phone",
+                    href: "/ki-telefonassistent",
+                },
+                {
+                    title: "KI-Automatisierung",
+                    description: "Wir automatisieren deine wiederkehrenden Prozesse: E-Mail-Bearbeitung, Angebotserstellung, CRM-Updates und mehr. Dein Team konzentriert sich auf das Wesentliche.",
+                    icon: "Bot",
+                    href: "/ki-automatisierung",
+                },
+                {
+                    title: "Lokale KI-Systeme",
+                    description: "KI auf deiner eigenen Hardware — DSGVO-konform, ohne Cloud. Ideal für Kanzleien, Ingenieursbüros und Unternehmen mit Compliance-Anforderungen.",
+                    icon: "Server",
+                    href: "/lokale-ki-systeme",
+                },
+                {
+                    title: "KI Workshop",
+                    description: "Noch nicht sicher, wo du anfangen sollst? Im KI Workshop zeigen wir dir konkret, wo KI in deinem Unternehmen sofort Wirkung erzeugt.",
+                    icon: "GraduationCap",
+                    href: "/ki-workshop",
+                },
+            ],
+            vorteile: [
+                {
+                    title: "Persönliche Betreuung vor Ort",
+                    description: "Kein Ticket-System, kein Call-Center. Du hast einen direkten Ansprechpartner aus Graz — für schnelle Abstimmungen und echtes Verständnis deiner Situation.",
+                    icon: "MapPin",
+                },
+                {
+                    title: "Echte Projektreferenzen",
+                    description: "Unsere Referenzen sind keine Mockups. Hartmann Erdbau, Zitadelle Graz, NINJABOX Graz — echte Grazer Unternehmen mit messbaren Ergebnissen.",
+                    icon: "Star",
+                },
+                {
+                    title: "Regional verwurzelt",
+                    description: "Als Grazer Unternehmen kennen wir die lokale Wirtschaftsstruktur, die Fördermöglichkeiten und die Herausforderungen regionaler KMU.",
+                    icon: "Building2",
+                },
+                {
+                    title: "Schnelle Umsetzung",
+                    description: "Von der ersten Idee bis zum laufenden System in wenigen Wochen. Kein jahrelanges IT-Projekt — schnelle Ergebnisse mit sofortigem ROI.",
+                    icon: "Zap",
+                },
+            ],
+            testimonials: [
+                {
+                    text: "Die lokale KI-Lösung findet Dokumente in wenigen Sekunden. Das spart uns im Ingenieurs-Alltag extrem viel wertvolle Zeit bei der Recherche.",
+                    name: "Markus Frewein",
+                    role: "Geschäftsführer, verkehrPlus ZT GmbH",
+                },
+                {
+                    text: "Die digitale Lösung für unsere Lieferscheine hat unseren Papierkram massiv reduziert. Der Arbeitsalltag ist viel einfacher und effizienter geworden.",
+                    name: "Manfred Hartmann",
+                    role: "Geschäftsführer, Hartmann Erdbau GmbH",
+                },
+                {
+                    text: "Wir schalten seit über zwei Jahren erfolgreich Social Media Ads mit DeinRanking. Ein konstanter Kanal für neue Mitglieder.",
+                    name: "Luca Kerbl",
+                    role: "Geschäftsführer, Zitadelle Graz",
+                },
+                {
+                    text: "Innerhalb weniger Tage wurde eine eigene Software gebaut, die exakt auf unsere speziellen Anwendungsfälle zugeschnitten war. Top Umsetzung!",
+                    name: "Mag. Markus Totz",
+                    role: "Leitung, Wirbelsäulenstützpunkt Graz MT GmbH",
+                },
+            ],
+            faq: [
+                {
+                    question: "Ist DeinRanking wirklich eine Grazer KI Agentur?",
+                    answer: "Ja. Unser Hauptsitz ist in der Gradnerstraße 120, 8054 Graz. Wir sind ein lokales Unternehmen und betreuen Kunden persönlich — kein Offshore-Team, kein Call-Center.",
+                },
+                {
+                    question: "Für welche Grazer Unternehmen ist das interessant?",
+                    answer: "Für jedes Grazer KMU mit repetitiven Prozessen, das telefonische Erreichbarkeit verbessern oder DSGVO-konforme KI-Lösungen einsetzen möchte. Branchen: Handwerk, Immobilien, Gesundheit, Ingenieursbüros, Gastronomie, Handel.",
+                },
+                {
+                    question: "Wie schnell ist die Umsetzung?",
+                    answer: "Ein KI-Telefonassistent ist in der Regel in 2–3 Wochen live. Automatisierungsprojekte dauern je nach Komplexität 2–8 Wochen. Wir liefern schnell, weil wir keine große Agentur-Bürokratie haben.",
+                },
+                {
+                    question: "Kann ich KI-Förderungen für mein Projekt nutzen?",
+                    answer: "Sehr wahrscheinlich ja. Als österreichisches KMU kannst du über KMU.DIGITAL oder AI Mission Austria bis zu 150.000 € für dein KI-Projekt erhalten. Wir helfen dir beim Einschätzen der Förderfähigkeit.",
+                },
+                {
+                    question: "Was kostet eine KI-Lösung bei DeinRanking?",
+                    answer: "KI-Telefonassistenten starten ab €299/Monat. Automatisierungsprojekte werden als Einmalprojekt angeboten und richten sich nach Umfang und Komplexität. Im kostenlosen Erstgespräch bekommst du eine konkrete Einschätzung.",
+                },
+            ],
+        },
         footer: {
             copyright: "© 2024 DeinRanking. Alle Rechte vorbehalten.",
             columns: {
@@ -497,6 +794,15 @@ export const siteConfig = {
                         { label: "Impressum", href: "/impressum" },
                         { label: "Datenschutz", href: "/datenschutz" },
                         { label: "AGB", href: "/agbs" },
+                    ],
+                },
+                ressourcen: {
+                    title: "Ressourcen",
+                    links: [
+                        { label: "KI Förderung Österreich", href: "/ki-foerderung-oesterreich" },
+                        { label: "KI Agentur Graz", href: "/ki-agentur-graz" },
+                        { label: "Ratgeber", href: "/ratgeber" },
+                        { label: "KI Workshop", href: "/ki-workshop" },
                     ],
                 },
             },

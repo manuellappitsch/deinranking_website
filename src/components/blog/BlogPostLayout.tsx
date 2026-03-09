@@ -2,6 +2,7 @@
 
 import { ReactNode } from "react";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 import { TableOfContents } from "./TableOfContents";
 import { AuthorBox } from "./AuthorBox";
 import { NetworkBackground } from "@/components/ui/network-background";
@@ -21,8 +22,30 @@ interface BlogPostLayoutProps {
 }
 
 export function BlogPostLayout({ post, children }: BlogPostLayoutProps) {
+    const pathname = usePathname();
+    const canonicalUrl = `https://dein-ranking.at${pathname}`;
+    const articleSchema = {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        headline: post.title,
+        description: post.subtitle ?? post.title,
+        author: { "@type": "Person", name: post.author },
+        publisher: {
+            "@type": "Organization",
+            name: "DeinRanking",
+            url: "https://dein-ranking.at",
+        },
+        image: post.image.startsWith("http") ? post.image : `https://dein-ranking.at${post.image}`,
+        url: canonicalUrl,
+        mainEntityOfPage: { "@type": "WebPage", "@id": canonicalUrl },
+    };
+
     return (
         <div className="min-h-screen bg-deep-navy selection:bg-brand-green selection:text-white">
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+            />
             {/* Hero Section (Half Screen) */}
             <section className="relative h-[60vh] min-h-[500px] flex items-center justify-center overflow-hidden">
                 <div className="absolute inset-0 z-0">

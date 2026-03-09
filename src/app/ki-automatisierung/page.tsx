@@ -29,6 +29,25 @@ const Counter = ({ value, label }: { value: string, label: string }) => {
     );
 };
 
+const serviceSchema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: "KI-Automatisierung für Unternehmen",
+    description: "KI-gestützte Prozessautomatisierung für Unternehmen im DACH-Raum – von Workflow-Automatisierung bis zu intelligenten KI-Agenten.",
+    provider: {
+        "@type": "Organization",
+        name: "DeinRanking",
+        url: "https://dein-ranking.at",
+        address: {
+            "@type": "PostalAddress",
+            addressLocality: "Graz",
+            addressCountry: "AT",
+        },
+    },
+    areaServed: { "@type": "Country", name: "Austria" },
+    url: "https://dein-ranking.at/ki-automatisierung",
+};
+
 export default function AutomationPage() {
     const { aiAutomation } = siteConfig.content;
 
@@ -63,6 +82,10 @@ export default function AutomationPage() {
 
     return (
         <main className="min-h-screen bg-deep-navy selection:bg-brand-green selection:text-white overflow-x-hidden">
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+            />
 
             {/* Hero Section */}
             <section className="relative min-h-[85vh] flex items-center justify-center pt-32 pb-20 overflow-hidden">
