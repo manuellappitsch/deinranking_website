@@ -1,0 +1,34 @@
+# DeinRanking GmbH — KI-Agentur aus Graz
+
+> KI-Agentur für Voice AI, KI-Telefonassistenten & Prozessautomatisierung. B2B, DACH-Raum, DSGVO-konform.
+
+## Über uns
+- Unternehmen: DeinRanking GmbH
+- Gründer: Manuel Lappitsch
+- Standort: Graz, Steiermark, Österreich
+- Website: https://dein-ranking.at
+- Kontakt: office@dein-ranking.at, +43 676 7066333
+
+## Services
+- KI-Telefonassistent: 24/7 automatische Anrufannahme, Qualifizierung, Terminbuchung (ab 299€/Monat)
+- KI-Automatisierung: Marketing, Sales, Backoffice Prozesse automatisieren
+- Lokale KI-Systeme: On-Premise, DSGVO-konforme KI ohne Cloud
+- KI-Workshop: Praxisnahe Schulungen für Teams und Führungskräfte
+- Vibe-Coding: KI-gestützte Software-Entwicklung
+- KI-Förderberatung: Österreichische Förderprogramme für KI-Projekte
+
+## Wichtige Seiten
+- Homepage: https://dein-ranking.at
+- KI-Telefonassistent: https://dein-ranking.at/ki-telefonassistent
+- KI-Automatisierung: https://dein-ranking.at/ki-automatisierung
+- Lokale KI-Systeme: https://dein-ranking.at/lokale-ki-systeme
+- KI-Agentur Graz: https://dein-ranking.at/ki-agentur-graz
+- KI-Förderung Österreich: https://dein-ranking.at/ki-foerderung-oesterreich
+- Ratgeber: https://dein-ranking.at/ratgeber
+- Case Studies: https://dein-ranking.at/casestudies
+- Kontakt: https://dein-ranking.at/kontakt
+
+## Zielgruppe
+- KMU-Geschäftsführer im DACH-Raum
+- Branchen: Handwerk, Immobilien, Arztpraxen, Kanzleien, Logistik, Facility Management
+- Pain Points: Fachkräftemangel, hohe Support-Kosten, verpasste Anrufe, manuelle Prozesse
