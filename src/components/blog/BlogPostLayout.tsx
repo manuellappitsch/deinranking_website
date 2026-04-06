@@ -21,19 +21,49 @@ interface BlogPostLayoutProps {
     children: ReactNode;
 }
 
+function parseGermanDate(dateStr: string): string {
+  const months: Record<string, string> = {
+    "Januar": "01", "Februar": "02", "März": "03", "April": "04",
+    "Mai": "05", "Juni": "06", "Juli": "07", "August": "08",
+    "September": "09", "Oktober": "10", "November": "11", "Dezember": "12",
+    "Jän": "01", "Feb": "02", "Mär": "03", "Apr": "04",
+    "Jun": "06", "Jul": "07", "Aug": "08", "Sep": "09",
+    "Okt": "10", "Nov": "11", "Dez": "12",
+  };
+  const parts = dateStr.replace(".", "").split(" ").filter(Boolean);
+  if (parts.length >= 3) {
+    const day = parts[0].padStart(2, "0");
+    const month = months[parts[1]] ?? "01";
+    const year = parts[2];
+    return `${year}-${month}-${day}`;
+  }
+  return new Date().toISOString().split("T")[0];
+}
+
 export function BlogPostLayout({ post, children }: BlogPostLayoutProps) {
     const pathname = usePathname();
     const canonicalUrl = `https://dein-ranking.at${pathname}`;
+    const isoDate = parseGermanDate(post.date);
     const articleSchema = {
         "@context": "https://schema.org",
         "@type": "Article",
         headline: post.title,
         description: post.subtitle ?? post.title,
-        author: { "@type": "Person", name: post.author },
+        datePublished: isoDate,
+        dateModified: isoDate,
+        author: {
+            "@type": "Person",
+            name: post.author,
+            url: "https://dein-ranking.at/ueber-deinranking",
+        },
         publisher: {
             "@type": "Organization",
-            name: "DeinRanking",
+            name: "DeinRanking GmbH",
             url: "https://dein-ranking.at",
+            logo: {
+                "@type": "ImageObject",
+                url: "https://dein-ranking.at/images/logo.png",
+            },
         },
         image: post.image.startsWith("http") ? post.image : `https://dein-ranking.at${post.image}`,
         url: canonicalUrl,
