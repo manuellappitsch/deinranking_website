@@ -28,18 +28,6 @@ export const siteConfig = {
                             { title: "Lokale KI-Systeme", href: "/lokale-ki-systeme" },
                         ],
                     },
-                    {
-                        title: "Automatisierung",
-                        links: [
-                            { title: "In Arbeit...", href: "#", disabled: true },
-                        ],
-                    },
-                    {
-                        title: "Digitalisierung",
-                        links: [
-                            { title: "In Arbeit...", href: "#", disabled: true },
-                        ],
-                    },
                 ],
             },
             { title: "Case Studies", href: "/casestudies" },
@@ -49,7 +37,7 @@ export const siteConfig = {
         ],
         hero: {
             badge: "Die Zukunft der Arbeit ist jetzt",
-            title: "Automatisierung & KI-Lösungen für dein Business",
+            title: "KI-Agentur aus Graz für Voice AI & Automatisierung",
             description: "Wir transformieren Unternehmen mit Automatisierungen und KI-Systeme, um Prozesse zu beschleunigen, Kosten zu senken und dir den entscheidenden Wettbewerbsvorteil zu sichern.",
             ctaPrimary: "Kostenloses Erstgespräch",
             ctaPrimaryHref: "/kontakt",
@@ -420,8 +408,17 @@ export const siteConfig = {
         blog: {
             title: "Ratgeber & Insights",
             subtitle: "Expertenwissen zu KI, Automatisierung und SEO.",
-            categories: ["Alle", "Automatisierung", "KI-Automatisierung", "KI-Lösungen", "Vibe-Coding", "Lokale KI-Systeme"],
+            categories: ["Alle", "Automatisierung", "KI Marketing", "KI-Automatisierung", "KI-Lösungen", "Vibe-Coding", "Lokale KI-Systeme"],
             posts: [
+                {
+                    title: "KI im Marketing: Was KMU 2026 wirklich einsetzen",
+                    excerpt: "8 konkrete Use Cases, Tools mit Preisen & Praxis-Tipps von einer KI-Agentur aus Graz.",
+                    date: "6. April 2026",
+                    createdAt: "2026-04-06",
+                    category: "KI Marketing",
+                    slug: "/ratgeber/ki-im-marketing",
+                    image: "/images/blog/ki-im-marketing/hero.jpg",
+                },
                 {
                     title: "Make.com: Automatisierung für dein Business, ohne Programmierkentnisse",
                     excerpt: "Wie du mit Make.com Prozesse automatisierst, Zeit sparst und dein Unternehmen skalierst – ganz ohne Code.",

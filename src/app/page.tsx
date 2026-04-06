@@ -19,6 +19,21 @@ export const metadata: Metadata = {
     siteName: "DeinRanking",
     locale: "de_AT",
     type: "website",
+    // TODO: Replace with dedicated 1200x630 OG-Banner (incl. Logo + Tagline + Manuel)
+    images: [
+      {
+        url: "https://dein-ranking.at/images/manu-workshop.jpg",
+        width: 1024,
+        height: 1024,
+        alt: "Manuel Lappitsch – KI-Agentur DeinRanking aus Graz",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "KI Agentur & Automatisierung für Unternehmen | DeinRanking",
+    description: "KI-Agentur aus Graz: Voice AI, KI-Telefonassistenten & Prozessautomatisierung für B2B-Unternehmen im DACH-Raum.",
+    images: ["https://dein-ranking.at/images/manu-workshop.jpg"],
   },
 };
 
