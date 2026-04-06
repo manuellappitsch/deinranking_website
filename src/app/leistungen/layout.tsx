@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Breadcrumb } from "@/components/ui/breadcrumb";
 
 export const metadata: Metadata = {
   title: "KI-Leistungen: Voice AI, Automatisierung & mehr | DeinRanking",
@@ -30,6 +31,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           }),
         }}
       />
+      <Breadcrumb items={[{ label: "Leistungen" }]} />
       {children}
     </>
   );

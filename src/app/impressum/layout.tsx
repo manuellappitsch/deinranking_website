@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Breadcrumb } from "@/components/ui/breadcrumb";
 
 export const metadata: Metadata = {
   title: "Impressum | DeinRanking GmbH",
@@ -23,6 +24,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           }),
         }}
       />
+      <Breadcrumb items={[{ label: "Impressum" }]} />
       {children}
     </>
   );
