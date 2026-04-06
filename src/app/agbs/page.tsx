@@ -1,4 +1,12 @@
+import type { Metadata } from "next";
 import { PageLayout } from "@/components/layout/PageLayout";
+
+export const metadata: Metadata = {
+  title: "AGB | DeinRanking GmbH",
+  description: "Allgemeine Geschäftsbedingungen der DeinRanking GmbH für KI-Dienstleistungen, Automatisierung und Beratung.",
+  alternates: { canonical: "https://dein-ranking.at/agbs" },
+  robots: { index: true, follow: true },
+};
 
 export default function AGBPage() {
     return (

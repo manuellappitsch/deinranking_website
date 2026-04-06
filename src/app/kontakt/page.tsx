@@ -132,9 +132,9 @@ export default function ContactPage() {
                         transition={{ delay: 0.1 }}
                         className="text-4xl md:text-7xl font-bold text-white mb-6 leading-tight tracking-tight"
                     >
-                        Lass uns deine Prozesse <br />
+                        Kontakt — Lass uns über dein <br />
                         <span className="text-brand-green">
-                            digitalisieren & skalieren.
+                            KI-Projekt reden.
                         </span>
                     </motion.h1>
 
