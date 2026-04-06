@@ -1,11 +1,11 @@
 export const siteConfig = {
     name: "DeinRanking",
     description: "KI & Automatisierung Agentur",
-    url: "https://deinranking.de", // Placeholder
-    ogImage: "https://deinranking.de/og.jpg",
+    url: "https://dein-ranking.at",
+    ogImage: "https://dein-ranking.at/images/manu-workshop.jpg",
     links: {
-        twitter: "https://twitter.com/deinranking",
-        github: "https://github.com/deinranking",
+        linkedin: "https://www.linkedin.com/in/manuel-lappitsch/",
+        instagram: "https://www.instagram.com/deinranking_gmbh/",
     },
     seo: {
         title: "DeinRanking | KI & Automatisierung",
